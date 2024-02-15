@@ -6,8 +6,9 @@ $nav_citations_class = '';
 $nav_cooking_class = 'active_page';
 $nav_flowershop_class = '';
 
-$form_japanese_vegetarian = $_GET['japanese-vegetarian']; // untrusted
-$form_sauces_masterclass = $_GET['sauces-masterclass']; // untrusted
+$form_japanese_vegetarian = $_POST['japanese-vegetarian']; // untrusted
+$form_sauces_masterclass = $_POST['sauces-masterclass']; // untrusted
+$form_email = $_POST['email']; // untrusted
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +28,13 @@ $form_sauces_masterclass = $_GET['sauces-masterclass']; // untrusted
 
     <dl>
       <dt>Japanese Vegetarian</dt>
-      <dd><?php echo $form_japanese_vegetarian; ?></dd>
+      <dd><?php echo htmlspecialchars($form_japanese_vegetarian); ?></dd>
 
       <dt>Sauces Masterclass</dt>
-      <dd><?php echo $form_sauces_masterclass; ?></dd>
+      <dd><?php echo htmlspecialchars($form_sauces_masterclass); ?></dd>
 
       <dt>Your Email</dt>
-      <dd><?php $form_email; ?></dd>
+      <dd><?php echo htmlspecialchars($form_email); ?></dd>
     </dl>
 
   </main>

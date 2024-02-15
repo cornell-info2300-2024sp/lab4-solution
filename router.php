@@ -78,7 +78,7 @@ const ROUTES = array(
   '/'                             => 'pages/home.php',
   '/citation-policy'              => 'pages/citations.php',
   '/cooking-classes'              => 'pages/cooking-classes.php',
-  '/cooking-classes/confrimation' => 'pages/cooking-confirmation.php',
+  '/cooking-classes/confirmation' => 'pages/cooking-confirmation.php',
   '/flowershop'                   => 'pages/flowershop.php',
   '/flowershop/confirmation'      => 'pages/flowershop-confirmation.php',
 );
@@ -103,5 +103,5 @@ if ($php_file = match_routes($request_uri, ROUTES)) {
 } else {
   error_log("  404 Not Found: " . $request_uri);
   http_response_code(404);
-  require 'pages/not-found.php'
+  require 'pages/not-found.php';
 }
